@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+var express_1 = require("express");
+var CreatePlanoController_1 = require("./controllers/CreatePlanoController");
+var CreateMedicoController_1 = require("./controllers/CreateMedicoController");
+var router = (0, express_1.Router)();
+exports.router = router;
+var createPlanoController = new CreatePlanoController_1.CreatePlanoController();
+var createMedicoController = new CreateMedicoController_1.CreateMedicoController();
+router.post("/planos", createPlanoController.handle);
+router.post("/medicos", createMedicoController.handle);
